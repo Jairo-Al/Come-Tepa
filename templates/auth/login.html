@@ -1,0 +1,73 @@
+{% extends "base.html"  %}
+
+{% load static %}
+
+{% block content  %}
+
+<link rel='stylesheet' href='{% static "css/login.css" %}'>
+
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+
+</head>
+<body id="LoginForm">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">ComeTepa</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse " id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active  " >
+        <a class="nav-link" href="#">¿Que hacemos?<span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+    <div flex-row-reverse>
+    <ul class="navbar-nav">
+       <li class="nav-item  ">
+        <a class="nav-link" href="#">Contacto</a>
+      </li>
+    </ul>
+    </div>
+        </div>
+</nav>
+
+
+<div class="container">
+
+    <div class="row justify-content-md-center">
+        <div class="col-md-5 sm-7 mt-5" id="a_container">
+
+                <div class="jumbotron">
+  				 <h1 id='titulo'>Bienvenido a ComeTepa</h1>
+  				 </div>
+
+            <form method='POST'> {% csrf_token %}
+
+  			<div class="form-group">
+				{{form}}
+        </div>
+
+          <button type='submit' class='btn form-control' id='sub'>
+     Iniciar
+    </button>
+	<div class="mt-4">
+		 <a class="btn form-control" href="{% url 'registrate' %}" id='reg'>Registrate</a>
+                </div>
+</form>
+
+        </div>
+
+    </div>
+
+    </div>
+
+
+
+</body>
+{% endblock content   %}
+
+
+
+

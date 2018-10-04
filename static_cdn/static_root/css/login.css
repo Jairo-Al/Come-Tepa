@@ -1,0 +1,66 @@
+body{
+    background-image: url('../img/knife.jpeg');
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position:center;
+}
+
+#a_container {
+    background-color: rgba(237, 234, 224, 0.5) !important;
+    padding: 20px;
+    border-style: solid;
+    border-width: 8px;
+    border-color: rgb(237, 234, 224);
+}
+
+#titulo{
+    font-family: 'Roboto Slab', serif;
+    color: #555f61;
+    font-size: 3.2em;
+}
+
+#sub{
+    background-color:#43888E;
+    color:white;
+    font-size: 1.1em;
+    font-family: 'Roboto Slab', serif;
+}
+
+#reg{
+     background-color:#9DD362;
+     color:white;
+    font-size: 1.1em;
+    font-family: 'Roboto Slab', serif;
+}
+
+label{
+    font-size: 1em;
+    font-weight: bold;
+    color: #555f61;
+    font-family: 'Roboto Slab', serif;
+}
+
+.jumbotron{
+    text-align:center;
+    background-color:transparent !important;
+    padding:5%;
+}
+
+.bg-light {
+    background-color: rgba(237,234,224,0.8) !important;
+    border-bottom: solid;
+    border-width: 4px;
+    border-color: rgb(237, 234, 224);
+}
+
+@media (max-width: 576px)  {
+
+    #a_container{
+    background-color: transparent;
+    }
+
+    .jumbotron{
+    background-color: rgba(237,234,224,0.6) !important;
+    }
+
+}
