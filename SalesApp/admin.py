@@ -12,6 +12,11 @@ class UserAdmin(admin.ModelAdmin):
     class Meta:
         model = User
 
+class SalesAdmin(admin.ModelAdmin):
+    list_display =('__str__','slug')
+    class Meta:
+        model = restaurantes
+
 
 admin.site.register(productos)
 admin.site.register(restaurantes)
