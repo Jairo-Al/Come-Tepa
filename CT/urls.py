@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
-from SalesApp.views import home_page, res_list_view, res_detail_view, res_slug_view
+from SalesApp.views import home_page, select_page
 from SessionApp.views import login_page, register_page,logout_page
 from django.conf import settings
 from django.conf.urls.static import static
@@ -26,9 +26,7 @@ urlpatterns = [
     path('', login_page),
     url(r'^registrate/$', register_page, name='registrate'),
     url(r'^logout/$', logout_page, name='logout'),
-    url(r'^home2/$', res_list_view),
-    url(r'^productos/(?P<pk>\d+)/$', res_detail_view),
-    url(r'^productos/(?P<slug>[\w-]+)/$', res_slug_view),
+    url(r'^productos/(?P<slug>[\w-]+)/$', select_page, name='select', ),
     path('home/', home_page),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

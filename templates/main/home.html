@@ -1,82 +1,60 @@
 {% extends "base.html"  %}
-
 {% load static %}
-
 {% block content  %}
 
 <link rel='stylesheet' href='{% static "css/home_style.css" %}'>
 
-
 </head>
-
 <body >
 
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">ComeTepa</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<!-- NavBar -->
+{% include 'components/nav.html'  %}
 
-  <div class="collapse navbar-collapse " id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active  " >
-        <a class="nav-link" href="#">¿Que hacemos?<span class="sr-only">(current)</span></a>
-      </li>
-    </ul>
-    <div flex-row-reverse>
-    <ul class="navbar-nav">
+<!-- Main wrapper -->
+<div id="wrapper" class="toggled" >
 
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          {{ correo }}
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Mi perfil</a>
-          <a class="dropdown-item" href="#">Cambiar contraseña</a>
-          <div class="dropdown-divider"></div>
+<!-- Sidebar -->
+{% include 'components/sidenav.html'  %}
 
-          <a class="dropdown-item" href="{% url 'logout' %}" >Cerrar Sesion</a>
+  <!-- Page wrapper -->
+    <div id="page-content-wrapper">
+
+        <!-- Main Container -->
+        <div class="container-fluid">
+
+            <!-- Jumbotron -->
+	        <div class="row mb-4">
+		        <div class="col-md-12">
+			        <div class="jumbotron">
+				        <h2>  Hello, world!  </h2>
+				        <p>
+					        This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
+                        </p>
+				        <p>
+					        <a class="btn btn-primary btn-large" href="#">Learn more</a>
+				        </p>
+			        </div>
+		        </div>
+	        </div>
+            <!-- End Jumbotron -->
+
+            <!-- Cards 1 row -->
+            {% include 'components/cards.html' with queryset=prod_feat_0 %}
+
+		    <!-- Cards 1 row -->
+            {% include 'components/cards.html' with queryset=prod_feat_1 %}
+
+        <!-- Ends Main Container -->
         </div>
-      </li>
-    </ul>
+
+    <!-- Ends Page Container -->
     </div>
-        </div>
-</nav>
 
+    <!-- JS para home -->
+    <script src='{% static "js/home_script.js" %}'></script>
 
-    <div class="container">
-
-      <div class="row row-offcanvas row-offcanvas-right">
-
-        <div class="col-12 col-md-9">
-          <p class="float-right hidden-md-up">
-            <button type="button" class="btn btn-primary btn-sm" data-toggle="offcanvas">Toggle nav</button>
-          </p>
-          <div class="jumbotron">
-            <h1>Hello, world!</h1>
-            <p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
-          </div>
-
-          </div><!--/row-->
-        </div><!--/span-->
-
-
-      </div><!--/row-->
-
-      <hr>
-
-      <footer>
-        <p>&copy; Company 2017</p>
-      </footer>
-
-    </div><!--/.container-->
-
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-
-
-
+<!-- Ends Main Wrapper -->
+</div>
 
 </body>
 {% endblock content   %}
