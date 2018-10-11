@@ -1,0 +1,32 @@
+
+<div class="row mb-4">
+{% for i in queryset %}
+
+			<div class="col-md-3">
+				<div class="card mb-3">
+					<img class="card-img-top" src="{{ i.imagen.url }}" />
+						<div class="card-block">
+							<h5 class="card-title ">
+								{{ i.platillo }}
+							</h5>
+							<p class="card-text">
+								 {{ i.descripcion }}
+							</p>
+							<p>
+								<a class="btn btn-primary" href="{{i.get_url}}">Ver mas</a> <a class="btn" href="#">Action</a>
+							</p>
+						</div>
+				</div>
+
+		{%  if forloop.counter|divisibleby:4%}
+		</div>
+		</div>
+		<div class="row mb-4">
+        <div class="col-md-12">
+		<div class="row mb-3">
+        {% else %}
+        </div>
+		{% endif %}
+		{% endfor %}
+	</div>
+</div>

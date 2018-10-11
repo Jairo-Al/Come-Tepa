@@ -1,0 +1,60 @@
+{% extends "base.html"  %}
+{% load static %}
+{% block content  %}
+
+<link rel='stylesheet' href='{% static "css/home_style.css" %}'>
+
+</head>
+<body >
+
+<!-- NavBar -->
+{% include 'components/nav.html'  %}
+
+<!-- Main wrapper -->
+<div id="wrapper" class="toggled" >
+
+<!-- Sidebar -->
+{% include 'components/sidenav.html'  %}
+
+  <!-- Page wrapper -->
+    <div id="page-content-wrapper">
+
+        <!-- Main Container -->
+        <div class="container-fluid">
+
+            <!-- Jumbotron -->
+	        <div class="row mb-4">
+		        <div class="col-md-12">
+			        <div class="jumbotron">
+				        <h2>  Hello, world!  </h2>
+				        <p>
+					        This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
+                        </p>
+				        <p>
+					        <a class="btn btn-primary btn-large" href="#">Learn more</a>
+				        </p>
+			        </div>
+		        </div>
+	        </div>
+            <!-- End Jumbotron -->
+
+
+            <!-- Cards row -->
+            {% include 'components/inf_cards.html' with queryset=queryset %}
+
+
+
+        <!-- Ends Main Container -->
+        </div>
+
+    <!-- Ends Page Container -->
+    </div>
+
+    <!-- JS para home -->
+    <script src='{% static "js/home_script.js" %}'></script>
+
+<!-- Ends Main Wrapper -->
+</div>
+
+</body>
+{% endblock content   %}

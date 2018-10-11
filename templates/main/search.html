@@ -1,0 +1,73 @@
+{% extends "base.html"  %}
+{% load static %}
+{% block content  %}
+
+<link rel='stylesheet' href='{% static "css/home_style.css" %}'>
+
+</head>
+<body >
+
+<!-- NavBar -->
+{% include 'components/nav.html'  %}
+
+<!-- Main wrapper -->
+<div id="wrapper" class="toggled" >
+
+<!-- Sidebar -->
+{% include 'components/sidenav.html'  %}
+
+  <!-- Page wrapper -->
+    <div id="page-content-wrapper">
+
+        <!-- Main Container -->
+        <div class="container-fluid">
+
+            {% if queryset_r %}
+            <div class="col-12 mb-3">
+            <h5>Resultados para Restaurantes con <b>{{ request.GET.q }}</b> </h5>
+            <hr class="mb-4"/>
+            </div>
+
+            <!-- Cards inf row restaurantes -->
+            {% include 'components/inf_cards.html' with queryset=queryset_r %}
+            {% endif %}
+
+            {% if queryset_p  %}
+            <div class="col-12 mb-3">
+            <h5>Resultados para platillos con <b>{{ request.GET.q }}</b> </h5>
+            <hr class="mb-4"/>
+            </div>
+
+
+            <!-- Cards inf platillos -->
+            {% include 'components/inf_cards.html' with queryset=queryset_p %}
+            {% endif %}
+
+            {% if queryset_f  %}
+            <div class="col-12 mb-3">
+            <h5> 0 resultados para <b>{{ request.GET.q }}</b> </h5>
+            <hr class="mb-4"/>
+            </div>
+            <div class="row">
+            <div class="col-12">
+            <h6 class="text-center mb-4"> Talvez te interese algunos de estos  restaurantes? </h6>
+            </div>
+            </div>
+            <!-- Cards inf platillos -->
+            {% include 'components/inf_cards.html' with queryset=queryset_f %}
+
+            {% endif %}
+        <!-- Ends Main Container -->
+        </div>
+
+    <!-- Ends Page Container -->
+    </div>
+
+    <!-- JS para home -->
+    <script src='{% static "js/home_script.js" %}'></script>
+
+<!-- Ends Main Wrapper -->
+</div>
+
+</body>
+{% endblock content   %}
