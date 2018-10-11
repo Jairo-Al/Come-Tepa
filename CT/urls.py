@@ -18,6 +18,7 @@ from django.urls import path
 from django.conf.urls import url
 from SalesApp.views import home_page, select_page
 from SessionApp.views import login_page, register_page,logout_page
+from SearchApp.views import search_page
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -27,6 +28,7 @@ urlpatterns = [
     url(r'^registrate/$', register_page, name='registrate'),
     url(r'^logout/$', logout_page, name='logout'),
     url(r'^productos/(?P<slug>[\w-]+)/$', select_page, name='select', ),
+    url(r'^search/$', search_page, name="search"),
     path('home/', home_page),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

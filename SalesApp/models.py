@@ -2,6 +2,7 @@ from django.db import models
 from .util import unique_slug_generator
 from  django.db.models.signals import pre_save
 from django.urls import reverse
+from django.db.models import Q
 # Create your models here.
 
 
@@ -20,6 +21,9 @@ class ProductManager(models.Manager):
 
     def featured(self):
         return self.get_queryset().filter(featured=True)
+
+
+
 
 class productos(models.Model):
     platillo           = models.CharField(max_length=120)
