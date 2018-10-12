@@ -1,8 +1,9 @@
 body{
-    background-image: url('../img/knife.jpeg');
-    background-size: cover;
-    background-repeat:no-repeat;
-    background-position:center;
+    background: url('../img/knife.jpeg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 #a_container {
