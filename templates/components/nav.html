@@ -1,6 +1,6 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark " id="nav-blue">
  <a href="#menu-toggle" class="btn btn-outline-light btn-sm mr-3" id="menu-toggle">Categorias</a>
-  <a class="navbar-brand" href="#">ComeTepa</a>
+  <a class="navbar-brand" href="{% url 'home' %}">ComeTepa</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -8,10 +8,10 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{% url 'home' %}"> Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+      <li class="nav-item ">
+        <a class="nav-link" href="{% url 'logout' %}"> Logout <span class="sr-only">(current)</span></a>
       </li>
         <div class="dropdown-menu " aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="#">Action</a>

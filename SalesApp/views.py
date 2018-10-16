@@ -51,6 +51,19 @@ def select_page_prod(request, *args, **kwargs):
     cart_obj, new_obj = Cart.objects.new_or_get(request)
     print(prod)
     print(cart_obj)
+
+    if request.method == 'POST':  # If the form has been submitted...
+        form = AddForm(request.POST)  # A form bound to the POST data
+        if form.is_valid():  # All validation rules pass
+            print("-----____----",form.cleaned_data['cantidad'])
+            cantidad = form.cleaned_data['cantidad']
+            total = cantidad * prod.precio
+            domicilio = form.cleaned_data['cantidad']
+            observacion = form.cleaned_data['cantidad']
+            print(total)
+            #return render(request, "main/final_cart.html", context)
+    else:
+        pass
     context = {
         'item': prod,
         'cart': cart_obj,

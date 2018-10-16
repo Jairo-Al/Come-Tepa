@@ -34,6 +34,6 @@ urlpatterns = [
     url(r'^search/$', search_page, name="search"),
     url(r'^cart/$', cart_home, name='cart'),
     url(r'^cart/update$', cart_update, name='cart_update'),
-    path('home/', home_page),
+    path('home/', home_page, name='home'),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
