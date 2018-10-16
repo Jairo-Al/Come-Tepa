@@ -3,15 +3,58 @@
 }
 html,body{
    height:100%;
-
+      background: url('../img/knife.jpeg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
+.img-thumbnail{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.jumbotron{
+  padding: 30px;
+}
+.card_p{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.02); }
 
+#nav-blue{
+  background-color: rgba(157, 211, 98, .9)
+}
 body {
   overflow-x: hidden;
 }
-
+.btn-outline-light {
+  border-width: medium;
+}
 #price{
-  color: red;
+  color: #a41515;
+  font-weight: bold;
+}
+#agregar{
+    background-color:#43888E;
+    color:white;
+    font-size: 1.1em;
+    font-family: 'Roboto Slab', serif;
+}
+.option_text{
+    color:white;
+    font-size: 1.2em;
+    font-family: 'Roboto Slab', serif;
+}
+
+.option_brand{
+    color:white;
+    font-weight: bold;
+    font-size: 1.4em;
+    font-family: 'Roboto Slab', serif;
 }
 
 #wrapper {
@@ -39,7 +82,9 @@ body {
   height: 100%;
   margin-left: -200px;
   overflow-y: auto;
-  background-color: #343a40;
+  border-top: 5px solid;
+  border-color: #b9bbbe;
+  background-color: rgba(157, 211, 98, .9);
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
@@ -161,7 +206,9 @@ body {
   height: 100%;
   margin-left: -200px;
   overflow-y: auto;
-  background-color: #343a40;
+  background-color: rgba(157, 211, 98, .9);
+  border-top: 5px solid;
+  border-color: #b9bbbe;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
