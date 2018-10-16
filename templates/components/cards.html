@@ -4,17 +4,17 @@
 		<div class="row mb-4">
         {% for i in queryset %}
 			<div class="col-md-4">
-				<div class="card mb-3">
-					<img class="card-img-top" src="{{ i.logo.url }}" />
+				<div class="card mb-3 p-2">
+					<img class="card-img-top " src="{{ i.logo.url }}" />
 						<div class="card-block ">
 							<h5 class="card-title">
 								{{ i.platillo }}
 							</h5>
 							<p class="card-text">
-								 {{ i.descripcion }}
+								 {{ i.descripcion|linebreaks }}
 							</p>
 							<p>
-								<a class="btn btn-primary" href="{{i.get_url}}">Ver mas</a> <a class="btn" href="#">Action</a>
+								<a class="btn grow" id="agregar" href="{{i.get_url}}">Ver mas</a>
 							</p>
 						</div>
 				</div>

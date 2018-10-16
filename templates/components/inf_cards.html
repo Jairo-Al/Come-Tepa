@@ -3,18 +3,23 @@
 {% for i in queryset %}
 
 			<div class="col-md-3">
-				<div class="card mb-3">
-					<img class="card-img-top" src="{{ i.logo.url }}" />
-						<div class="card-block">
-							<h5 class="card-title ">
+				<div class="card mb-3 p-2">
+                    <h5 class="card-title mx-auto ">
 								{{ i.platillo }}
 							</h5>
+					<img class="card-img " src="{{ i.logo.url }}" />
+						<div class="card-block">
 							<p class="card-text">
-								 {{ i.descripcion }}
+								 {{ i.descripcion|linebreaks }}
 							</p>
-							<p>
-								<a class="btn btn-primary" href="{{i.get_url}}">Ver mas</a> <a class="btn" href="#">Action</a>
-							</p>
+							    <div class="row">
+							    <div class="col-6">
+
+							        </div>
+							        <div class="col-6">
+							        <a class="btn mb-2 grow" id="agregar" href="{{i.get_url}}">Agregar</a>
+                                </div>
+                                </div>
 						</div>
 				</div>
 

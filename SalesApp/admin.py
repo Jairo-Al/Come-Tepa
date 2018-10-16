@@ -17,7 +17,12 @@ class SalesAdmin(admin.ModelAdmin):
     class Meta:
         model = restaurantes
 
+class productsAdmin(admin.ModelAdmin):
+    list_display =('platillo','nombre_res','featured')
+    class Meta:
+        model = productos
 
-admin.site.register(productos)
-admin.site.register(restaurantes)
+
+admin.site.register(productos, productsAdmin)
+admin.site.register(restaurantes, SalesAdmin)
 admin.site.register(User,UserAdmin)

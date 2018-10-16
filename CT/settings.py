@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'SalesApp',
     'SessionApp',
     'SearchApp',
+    'CartApp',
 ]
 
 MIDDLEWARE = [

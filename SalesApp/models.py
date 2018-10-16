@@ -1,9 +1,13 @@
 from django.db import models
 from .util import unique_slug_generator
+from .slup_product import unique_slug_generator
 from  django.db.models.signals import pre_save
 from django.urls import reverse
 from django.db.models import Q
 # Create your models here.
+
+
+
 
 
 class ProductManager(models.Manager):
@@ -19,6 +23,10 @@ class ProductManager(models.Manager):
         qs = productos.objects.all().filter(nombre_res='{}'.format(res))
         return qs
 
+    def get_by_platillo(platillo):
+        qs = productos.objects.all().filter(platillo='{}'.format(platillo))
+        return qs
+
     def featured(self):
         return self.get_queryset().filter(featured=True)
 
@@ -32,11 +40,22 @@ class productos(models.Model):
     imagen             = models.ImageField( null=True, blank=True)
     nombre_res         = models.CharField(max_length=120)
     featured           = models.BooleanField(default=False)
+    slug               = models.SlugField(blank=True, unique=True )
 
     objects = ProductManager()
 
     def __str__(self):
         return self.nombre_res
+
+    def get_url_prod(self):
+
+        return reverse("select_prod", kwargs={"slug": self.slug})
+
+def product_pre_save_receiver(sender, instance, *args, **kwargs):
+    if not instance.slug:
+        instance.slug = unique_slug_generator(instance)
+
+pre_save.connect(product_pre_save_receiver, sender=productos)
 
 class restaurantes(models.Model):
     nombre_res         = models.CharField(max_length=120)
