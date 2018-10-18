@@ -8,6 +8,15 @@ from django.db.models import Q
 
 
 
+class pedido(models.Model):
+    usuario            = models.CharField(max_length=120)
+    platillo           = models.CharField(max_length=120)
+    cantidad           = models.IntegerField()
+    total              = models.DecimalField(decimal_places=2,max_digits=10)
+    domicilio          = models.CharField(max_length=120)
+    observacion        = models.TextField()
+    nombre_res         = models.CharField(max_length=120)
+
 
 
 class ProductManager(models.Manager):
@@ -48,7 +57,6 @@ class productos(models.Model):
         return self.nombre_res
 
     def get_url_prod(self):
-
         return reverse("select_prod", kwargs={"slug": self.slug})
 
 def product_pre_save_receiver(sender, instance, *args, **kwargs):

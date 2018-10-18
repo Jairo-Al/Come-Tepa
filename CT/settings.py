@@ -77,6 +77,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'CT.wsgi.application'
 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'cometepa@gmail.com'
+EMAIL_HOST_PASSWORD = 'ComeTepa2018'
+EMAIL_USE_TSL = False
+EMAIL_USE_SSL = True
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases

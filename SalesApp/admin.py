@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.contrib.auth import get_user_model
-from .models import productos,restaurantes
+from .models import productos,restaurantes,pedido
 
 
 User = get_user_model()
@@ -22,7 +22,13 @@ class productsAdmin(admin.ModelAdmin):
     class Meta:
         model = productos
 
+class PedidoAdmin(admin.ModelAdmin):
+    list_display =('usuario','platillo','total')
+    class Meta:
+        model = productos
+
 
 admin.site.register(productos, productsAdmin)
 admin.site.register(restaurantes, SalesAdmin)
+admin.site.register(pedido, PedidoAdmin)
 admin.site.register(User,UserAdmin)

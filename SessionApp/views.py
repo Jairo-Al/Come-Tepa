@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect
 from .forms import LoginForm, RegisterForm
 from django.contrib.auth import authenticate, login, logout,  get_user_model
+from django.contrib.auth.decorators import login_required
+
+
 
 
 def login_page(request):
