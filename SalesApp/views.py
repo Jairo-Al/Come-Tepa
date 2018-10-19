@@ -47,6 +47,7 @@ def select_page_prod(request, *args, **kwargs):
         fdata = userObj.domicilio
         a = User.objects.filter(email=request.user).values()[0]
         correo = a['email']
+        nombre = a['nombre']
         print(correo)
         print("aaaaaaaa   ",a)
         slug = kwargs.get("slug")
@@ -80,6 +81,7 @@ def select_page_prod(request, *args, **kwargs):
                 print("el usuario : {}, pidio: {} {} {} por un total de : {} del restaurante {} al domicilio {}".format(usuario,cantidad,platillo,observacion,total,restaurant, domicilio))
                 new_pedido = pedido.objects.create(
                     usuario=correo,
+                    nombre = nombre,
                     platillo=platillo,
                     cantidad=cantidad,
                     total=total,

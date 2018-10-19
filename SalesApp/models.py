@@ -10,6 +10,7 @@ from django.db.models import Q
 
 class pedido(models.Model):
     usuario            = models.CharField(max_length=120)
+    nombre             = models.CharField(max_length=120)
     platillo           = models.CharField(max_length=120)
     cantidad           = models.IntegerField()
     total              = models.DecimalField(decimal_places=2,max_digits=10)
