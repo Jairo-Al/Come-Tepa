@@ -71,7 +71,7 @@ class restaurantes(models.Model):
     descripcion        = models.TextField()
     telefono           = models.IntegerField()
     domicilio          = models.CharField(max_length=120)
-    correo             = models.EmailField(max_length=255, unique=True)
+    correo             = models.EmailField(max_length=255)
     logo               = models.ImageField( null=True, blank=True)
     slug               = models.SlugField(blank = True, unique=True)
 

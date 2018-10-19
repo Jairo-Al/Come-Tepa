@@ -10,7 +10,7 @@
 					<img class="card-img " src="{{ i.logo.url }}" />
 						<div class="card-block">
 							<p class="card-text">
-								 {{ i.descripcion|linebreaks }}
+								 {{ i.descripcion|truncatewords:12 }}
 							</p>
 							    <div class="row">
 							    <div class="col-6">

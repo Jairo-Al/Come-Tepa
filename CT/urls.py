@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
-from SalesApp.views import home_page, select_page, select_page_prod, product_detail_view
+from SalesApp.views import home_page, select_page, select_page_prod, product_detail_view, restaurantes_page
 from SessionApp.views import login_page, register_page,logout_page
 from SearchApp.views import search_page,hamburguesas_search, pizza_search, ensalada_search, pasta_search, mariscos_search, burritos_search
 from django.conf import settings
@@ -44,7 +44,7 @@ urlpatterns = [
     url(r'^Pasta/$', pasta_search, name='pasta'),
     url(r'^Mariscos/$', mariscos_search, name='mariscos'),
     url(r'^Burritos/$', burritos_search, name='burritos'),
-
+    path('restaurantes/', restaurantes_page, name='restaurantes'),
     path('home/', home_page, name='home'),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -11,7 +11,7 @@
 								{{ i.platillo }}
 							</h5>
 							<p class="card-text">
-								 {{ i.descripcion|linebreaks }}
+								 {{ i.descripcion|truncatewords:12 }}
 							</p>
 							<p>
 								<a class="btn grow" id="agregar" href="{{i.get_url}}">Ver mas</a>

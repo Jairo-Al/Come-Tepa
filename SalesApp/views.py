@@ -10,13 +10,24 @@ from django.contrib.auth.decorators import login_required
 def home_page(request):
     if request.user.is_authenticated:
         queryset_0 = restaurantes.objects.all()[0:3]
-        queryset_1 = restaurantes.objects.all()[3:7]
+        queryset_1 = restaurantes.objects.all()[3:6]
 
         context = {
             'prod_feat_0': queryset_0,
             'prod_feat_1': queryset_1,
         }
         return render(request, "main/home.html",context)
+    else:
+        return redirect('/')
+
+def restaurantes_page(request):
+    if request.user.is_authenticated:
+        queryset = restaurantes.objects.all()
+
+        context = {
+            'queryset': queryset,
+        }
+        return render(request, "main/restaurantes.html",context)
     else:
         return redirect('/')
 
