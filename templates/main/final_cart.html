@@ -1,0 +1,102 @@
+{% extends "base.html"  %}
+{% load static %}
+{% block content  %}
+
+<link rel='stylesheet' href='{% static "css/home_style.css" %}'>
+
+</head>
+<body >
+
+<!-- NavBar -->
+{% include 'components/nav.html'  %}
+
+<!-- Main wrapper -->
+<div id="wrapper" class="toggled" >
+
+<!-- Sidebar -->
+{% include 'components/sidenav.html'  %}
+
+  <!-- Page wrapper -->
+    <div id="page-content-wrapper">
+
+        <!-- Main Container -->
+        <div class="container">
+
+            <div class="row">
+            <div class="col-md-12">
+            <div class=" table-responsive">
+                <table class="table table-light ">
+                <thead class="thead-light">
+                <tr>
+                  <th scope="col" class=""></th>
+                  <th scope="col">Platillo</th>
+                  <th scope="col">Restaurant</th>
+                  <th scope="col">Cantidad</th>
+                  <th scope="col">Total</th>
+                </tr>
+                </thead>
+                {% for p in pedidos %}
+                <tbody>
+                <tr>
+
+                  <th> <button type="button" onclick="window.location.href='/delete/{{p.id}}'" class="btn btn-danger btn-sm">Eliminar</button> </th>
+                  <th> {{ p.platillo }}</th>
+                  <th> {{ p.nombre_res }}</th>
+                  <th> {{ p.cantidad }}</th>
+                  <th> {{ p.total }}</th>
+                </tr>
+                {% endfor %}
+                <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th id="price">
+                 ${{ total_ped }}
+                </th>
+
+                </tr>
+                <tbody>
+                </table>
+            </div>
+            </div>
+            </div>
+
+            <div class="row">
+            <div class="col">
+            <div class="float-right">
+            <button type="button" class="btn grow" id="agregar" onclick="window.location.href='/clean/'" >Comprar</button>
+            </div>
+
+</div>
+</div>
+
+            {% include 'components/footer.html'  %}
+
+        <!-- Ends Main Container -->
+        </div>
+
+
+    <!-- Ends Page Container -->
+    </div>
+
+    <!-- JS para home -->
+    <script src='{% static "js/home_script.js" %}'></script>
+
+<!-- Ends Main Wrapper -->
+</div>
+
+</body>
+{% endblock content   %}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+
+    <style type="text/css">
+        body {margin: 0; padding: 0; min-width: 100%!important;}
+        .content {width: 100%; max-width: 600px;}
+        </style>
+    </head>
+    <body yahoo bgcolor="#f6f8f1">
+        <table width="100%" bgcolor="#f6f8f1" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td>
+                    <table class="content" align="center" cellpadding="0" cellspacing="0" border="0">
+                        <tr>
+                            <td>
+                                Buenas noticias, tienes un nuevo pedido de {{ nombre }}
+                            </td>
+                        </tr>
+                        <tr>
+                        <td>
+                        <strong>Platillo </strong>
+                        </td>
+                        <td>
+                        <strong>Cantidad </strong>
+                        </td>
+                        <td>
+                        <strong>Total    </strong>
+                        </td>
+                        <td>
+                        <strong>Observacion </strong>
+                        </td>
+                        </tr>
+                        {% for p in pedidos %}
+                        <tr>
+                        <td>{{ p.platillo }}</td>
+                        <td>{{ p.cantidad }}</td>
+                        <td>{{ p.total }}</td>
+                        <td>{{ p.observacion }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+
+                <div>
+                El pedido es para el domicilio <strong> {{ domicilio }} </strong>
+                </div>
+
+                <div>
+
+                 El total del pedido es: <strong>${{ total_ped }} </strong>
+
+                </div>
+                  <div>
+
+                 Para mayor comunicaion con {{ nombre }} habla con el al numero  <strong> {{ telefono }} </strong>
+
+                </div>
+
+
+    </body>
+</html>

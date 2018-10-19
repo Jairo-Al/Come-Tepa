@@ -1,0 +1,38 @@
+
+<div class="row mb-4">
+{% for i in queryset %}
+
+			<div class="col-md-3">
+				<div class="card mb-3 p-2">
+                    <h5 class="card-title mx-auto ">
+								{{ i.platillo }}
+							</h5>
+					<img class="card-img " src="{{ i.imagen.url }}" />
+						<div class="card-block">
+
+							<p class="card-text">
+								 {{ i.descripcion }}
+							</p>
+							    <div class="row">
+							    <div class="col-6">
+							        <p id="price" class="ml-2">${{ i.precio }}</p>
+							        </div>
+							        <div class="col-6">
+							        <a class="btn  mb-2 grow" id="agregar" href="{{i.get_url_prod}}">Agregar</a>
+                                </div>
+                                </div>
+						</div>
+				</div>
+
+		{%  if forloop.counter|divisibleby:4%}
+		</div>
+		</div>
+		<div class="row mb-4">
+        <div class="col-md-12">
+		<div class="row mb-3">
+        {% else %}
+        </div>
+		{% endif %}
+		{% endfor %}
+	</div>
+</div>

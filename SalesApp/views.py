@@ -33,9 +33,11 @@ def select_page(request, *args, **kwargs):
             instance = qs.first()
         except:
                raise  Http404()
+        res = restaurantes.objects.get(nombre_res__icontains=instance)
         prod = productos.objects.get_by_res(instance)
         context = {
             'queryset': prod,
+            'res': res,
         }
         return render(request, "main/platillos.html", context)
     else:

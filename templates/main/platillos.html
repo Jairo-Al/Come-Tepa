@@ -25,14 +25,21 @@
             <!-- Jumbotron -->
 	        <div class="row mb-4">
 		        <div class="col-md-12">
-			        <div class="jumbotron">
-				        <h2>  Hello, world!  </h2>
-				        <p>
-					        This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
-                        </p>
-				        <p>
-					        <a class="btn btn-primary btn-large" href="#">Learn more</a>
-				        </p>
+			        <div class="jumbotron " id="Res_j">
+				        <div class="row">
+				        <div class="col-lg-6 col-md-12">
+                        <h1 class="display-4">{{res.nombre_res}}</h1>
+                          <p class="lead">{{ res.descripcion}}</p>
+                          <hr class="my-4">
+                          <h5>Contacto</h5>
+                          <p>{{ res.telefono }}</p>
+                          <p>{{ res.domicilio}}</p>
+                         </div>
+				        <div class="col-lg-6 col-md-12">
+				        <img class="img-fluid img-thumbnail" src="{{ res.logo.url }}" />
+                        </div>
+                            </div>
+
 			        </div>
 		        </div>
 	        </div>

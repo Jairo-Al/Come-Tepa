@@ -1,0 +1,102 @@
+{% extends "base.html"  %}
+{% load static %}
+{% block content  %}
+
+<link rel='stylesheet' href='{% static "css/home_style.css" %}'>
+
+</head>
+<body >
+
+<!-- NavBar -->
+{% include 'components/nav.html'  %}
+
+<!-- Main wrapper -->
+<div id="wrapper" class="toggled" >
+
+<!-- Sidebar -->
+{% include 'components/sidenav.html'  %}
+
+  <!-- Page wrapper -->
+    <div id="page-content-wrapper">
+
+        <!-- Main Container -->
+        <div class="container">
+
+                        <!-- Jumbotron -->
+	        <div class="row mb-2">
+		        <div class="col-md-12">
+			        <div class="jumbotron">
+				        <h2>  Hello, world!  </h2>
+				        <p>
+					        This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
+                        </p>
+				        <p>
+					        <a class="btn btn-primary btn-large" href="#">Learn more</a>
+				        </p>
+			        </div>
+		        </div>
+	        </div>
+            <!-- End Jumbotron -->
+
+                    <!-- Jumbotron -->
+	        <div class="row mb-4">
+		        <div class="col-md-12">
+			        <div class="jumbotron">
+				    <div class="row">
+                    <div class="col-lg-3 col-md-12  mb-3">
+                    <div class="card border-info mb-3 card_p" style="max-width: 18rem;">
+                      <div class="card-body ">
+                        <h5 class="card-title">{{ item.platillo }}</h5>
+                        <hr>
+                        <p class="card-text">{{ item.descripcion }}</p>
+                      </div>
+                    </div>
+                    </div>
+                    <div class="col-lg-5 col-md-12  mb-3">
+                    <img class="img-thumbnail" src="{{ item.imagen.url }}" />
+                    </div>
+                    <div class="col-lg-4 col-md-12 mb-3">
+                      <form method='POST'> {% csrf_token %}
+                        <div class="form-group">
+                            {{form}}
+                        </div>
+                          <button type='submit' class='btn form-control' id='agregar'>
+                             Agregar
+                            </button>
+                        </form>
+                    </div>
+                    </div>
+                    </div>
+			        </div>
+		        </div>
+	        </div>
+            <!-- End Jumbotron -->
+
+            {% include 'components/footer.html'  %}
+
+        <!-- Ends Main Container -->
+        </div>
+
+    <!-- Ends Page Container -->
+    </div>
+
+    <!-- JS para home -->
+    <script src='{% static "js/home_script.js" %}'></script>
+
+<!-- Ends Main Wrapper -->
+</div>
+
+</body>
+{% endblock content   %}
+
+
+
+
+
+
+
+
+
+
+
+
