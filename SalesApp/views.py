@@ -31,6 +31,17 @@ def restaurantes_page(request):
     else:
         return redirect('/')
 
+def platillos_page(request):
+    if request.user.is_authenticated:
+        queryset = productos.objects.all()
+
+        context = {
+            'queryset': queryset,
+        }
+        return render(request, "main/platillosc.html",context)
+    else:
+        return redirect('/')
+
 
 def select_page(request, *args, **kwargs):
     if request.user.is_authenticated:

@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
-from SalesApp.views import home_page, select_page, select_page_prod, product_detail_view, restaurantes_page
+from SalesApp.views import home_page, select_page, select_page_prod, product_detail_view, restaurantes_page, platillos_page
 from SessionApp.views import login_page, register_page,logout_page
 from SearchApp.views import search_page,hamburguesas_search, pizza_search, ensalada_search, pasta_search, mariscos_search, burritos_search
 from django.conf import settings
@@ -37,7 +37,7 @@ urlpatterns = [
     url(r'^cart/update$', cart_update, name='cart_update'),
     url(r'^delete/(?P<id>\d+)/$', delete_func, name='delete'),
     url(r'^clean/$', clear_func, name='clear_after'),
-
+    path('platillos/', platillos_page, name='platillos'),
     url(r'^hamburguesas/$', hamburguesas_search, name='hamburguesas'),
     url(r'^Pizza/$', pizza_search, name='pizza'),
     url(r'^Ensaladas/$', ensalada_search, name='ensalada'),

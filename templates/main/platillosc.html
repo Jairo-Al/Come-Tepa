@@ -1,0 +1,63 @@
+{% extends "base.html"  %}
+{% load static %}
+{% block content  %}
+
+<link rel='stylesheet' href='{% static "css/home_style.css" %}'>
+
+</head>
+<body >
+
+<!-- NavBar -->
+{% include 'components/nav.html'  %}
+
+<!-- Main wrapper -->
+<div id="wrapper" class="toggled" >
+
+<!-- Sidebar -->
+{% include 'components/sidenav.html'  %}
+
+  <!-- Page wrapper -->
+    <div id="page-content-wrapper">
+
+        <!-- Main Container -->
+        <div class="container-fluid">
+
+            <!-- Jumbotron -->
+	        <div class="row mb-4">
+		        <div class="col-md-12">
+			        <div class="jumbotron">
+                        <div class="row">
+                        <div class="col-lg-8 col-md-12">
+				        <h2>  Conoce Come Tepa </h2>
+				        <p>
+					        Tepatitlán de Morelos se caracteriza por sus exquisitas carnitas, las cuales han ganado fama y reconocimiento desde principios del siglo pasado manteniendo vigencia y acrecentando su popularidad gracias a las adiciones que se han hecho a las recetas originales y a una carne de mejor calidad con cerdos criados en este mismo municipio.
+                        </p>
+                       </div>
+                        <div class="col-lg-4 col-md-12">
+                            <img src="{% static 'img/tepa.jpg' %}" class="img-fluid"  >
+                        </div>
+			        </div>
+                   </div>
+		        </div>
+	        </div>
+
+            <!-- End Jumbotron -->
+
+                {% include 'components/inf_cards_p.html' %}
+
+             {% include 'components/footer.html'  %}
+
+        <!-- Ends Main Container -->
+        </div>
+
+    <!-- Ends Page Container -->
+    </div>
+
+    <!-- JS para home -->
+    <script src='{% static "js/home_script.js" %}'></script>
+
+<!-- Ends Main Wrapper -->
+</div>
+
+</body>
+{% endblock content   %}
